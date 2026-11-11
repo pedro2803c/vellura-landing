@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vellura — Psicologia e Bem-estar</title>
+<meta name="description" content="Psicoterapia com acolhimento e atenção individualizada. Sessões presenciais e online na Vellura — Psicologia e Bem-estar.">
+<meta name="theme-color" content="#17414D">
+<link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/hero-poster.webp" fetchpriority="high">
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:300 600;font-display:swap;src:url(assets/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+body{margin:0;background:#FAFAF8}
+a{color:#104D57}a:hover{color:#276B75}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px;box-sizing:border-box;width:100%}
+.btn{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(16,77,87,.18)}
+.navlink{color:rgba(255,255,255,.88);text-decoration:none;transition:color .2s}
+.navlink:hover{color:#fff}
+.flink{color:#5F6D70;text-decoration:none}.flink:hover{color:#104D57}
+.card{transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(21,28,32,.10)}
+@keyframes rise{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+@keyframes fadein{from{opacity:0;scale:1.04}to{opacity:1;scale:1}}
+@keyframes reveal{from{opacity:0;translate:0 48px}to{opacity:1;translate:0 0}}
+@keyframes reveal-img{from{opacity:.4;clip-path:inset(10% 8% 10% 8% round 22px)}to{opacity:1;clip-path:inset(0 0 0 0 round 22px)}}
+@keyframes reveal-item{from{opacity:0;translate:0 28px;scale:.97}to{opacity:1;translate:0 0;scale:1}}
+@media (prefers-reduced-motion:no-preference){
+.hero-photo{animation:fadein 1.6s cubic-bezier(.2,.7,.2,1) both}
+.rise > *{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.rise > *:nth-child(2){animation-delay:.12s}
+.rise > *:nth-child(3){animation-delay:.24s}
+.rise > *:nth-child(4){animation-delay:.36s}
+.rise > *:nth-child(5){animation-delay:.5s}
+@supports (animation-timeline: view()){
+main > section > *, footer > *{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+#sobre img{animation:reveal-img linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
+.card, #sobre > div:last-child > div, [style*="minmax(220px"] > div{animation:reveal-item linear both;animation-timeline:view();animation-range:entry 10% entry 60%}
+.card:nth-child(2), #sobre > div:last-child > div:nth-child(3), [style*="minmax(220px"] > div:nth-child(2){animation-range:entry 20% entry 75%}
+.card:nth-child(3), #sobre > div:last-child > div:nth-child(5), [style*="minmax(220px"] > div:nth-child(3){animation-range:entry 30% entry 90%}
+[style*="minmax(220px"] > div:nth-child(4){animation-range:entry 40% entry 100%}
+}
+}
+.menu-btn{display:none!important}
+.field{width:100%;box-sizing:border-box;height:50px;padding:0 14px;border:1px solid #D5DBDA;border-radius:12px;background:#FAFAF8;font:inherit;font-size:15px;color:#151C20;transition:border-color .2s,box-shadow .2s}
+.field::placeholder{color:#7A878A}
+.field:focus{outline:none;border-color:#276B75;box-shadow:0 0 0 3px rgba(39,107,117,.18);background:#fff}
+textarea.field{height:auto;padding:12px 14px;resize:vertical;line-height:1.5}
+.pill{transition:background-color .2s,border-color .2s,color .2s;min-height:44px;padding:0 18px;border-radius:999px;font:inherit;font-size:14px;cursor:pointer;background:#fff;color:#151C20;border:1px solid #D5DBDA}
+.pill[aria-pressed=true]{background:#104D57;color:#fff;border-color:#104D57}
+.t-dot span{display:block;width:8px;height:8px;border-radius:999px;border:1px solid #8A9A9C;box-sizing:border-box}
+.t-dot[aria-current=true] span{background:#104D57;border-color:#104D57}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.fab{position:fixed;right:24px;bottom:24px;z-index:50;transition:transform .25s ease,box-shadow .25s ease}
+.fab:hover{transform:scale(1.08)}
+@keyframes blink{0%,100%{box-shadow:0 10px 28px rgba(37,211,102,.45);filter:brightness(1)}50%{box-shadow:0 10px 40px rgba(37,211,102,.85);filter:brightness(1.12)}}
+@keyframes wiggle{0%,86%,100%{rotate:0deg}89%{rotate:-12deg}92%{rotate:10deg}95%{rotate:-6deg}98%{rotate:3deg}}
+@keyframes fabin{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+@media (prefers-reduced-motion:no-preference){.fab{animation:fabin .6s .8s cubic-bezier(.2,.7,.2,1) both}.fab-core{animation:blink 1.6s ease-in-out infinite}.fab-core svg{animation:wiggle 3.2s 1.5s ease-in-out infinite}.fab-ping{animation:ping 1.6s ease-out infinite}.fab-ping2{animation-delay:.8s}}
+@media (max-width:640px){.fab-label{display:none!important}.fab{right:16px;bottom:16px}}
+@media (max-width:960px){
+.nav-links,.nav-cta{display:none!important}
+.menu-btn{display:inline-flex!important}
+.hero-photo{position:relative!important;width:100%!important;height:420px!important;inset:auto!important;margin-top:8px}
+.hero-text{padding:40px 24px 8px!important;max-width:none!important}
+.hero-nav{padding:20px 20px 0!important}
+.divider{display:none!important}
+}
+@media (prefers-reduced-motion:reduce){.rise,.btn,.card{animation:none;transition:none}}
+</style>
+</head>
+<body>
+<div style="font-family: Inter, system-ui, sans-serif; color: #151C20; background: #FAFAF8; width: 100%; -webkit-font-smoothing: antialiased">
+
+<!-- HERO -->
+<header id="inicio" style="padding: 20px 20px 0">
+<div style="position: relative; overflow: hidden; border-radius: 28px; background: #17414D; min-height: 660px; display: flex; flex-direction: column">
+<div class="hero-photo" style="position: absolute; top: 0; right: 0; bottom: 0; width: 100%">
+<video id="hero-video" poster="assets/hero-poster.webp" muted loop playsinline preload="none" aria-label="Mulher de cabelos castanhos ondulados, olhos fechados ao sol, com blusa branca sobre fundo azul-petróleo; o vento move levemente seu cabelo" style="width: 100%; height: 100%; object-fit: cover; object-position: 78% 30%; display: block"><source src="assets/hero.mp4" type="video/mp4"></video>
+</div>
+<nav class="hero-nav" aria-label="Principal" style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 44px 0">
+<a href="#inicio" aria-label="Vellura — início" style="display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8"></path><path d="M12 13c0-4.4 3.2-7.6 8-7.6 0 4.4-3.2 7.6-8 7.6z"></path><path d="M12 13c0-4.4-3.2-7.6-8-7.6 0 4.4 3.2 7.6 8 7.6z"></path><path d="M12 9.5c0-2.4.9-4.6 2.4-6"></path></svg>
+<span style="display: flex; flex-direction: column; line-height: 1"><span style="font-size: 21px; font-weight: 400; letter-spacing: -0.01em">Vellura</span><span style="font-size: 10px; opacity: .82; margin-top: 4px">Psicologia e Bem-estar</span></span>
+</a>
+<div class="nav-links" style="display: flex; gap: 30px; font-size: 14px">
+<a class="navlink" href="#inicio">Início</a>
+<a class="navlink" href="#sobre">Sobre nós</a>
+<a class="navlink" href="#modalidades">Especialidades</a>
+<a class="navlink" href="#equipe">Equipe</a>
+<a class="navlink" href="#depoimentos">Blog</a>
+<a class="navlink" href="#contato">Contato</a>
+</div>
+<a class="btn nav-cta" href="#agendar" style="display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #151C20; text-decoration: none; font-size: 13px; font-weight: 500; padding: 11px 18px; border-radius: 999px">Agendar consulta<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+<button class="menu-btn" type="button" aria-label="Abrir menu" id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" style="align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid rgba(255,255,255,.4); background: rgba(255,255,255,.08); color: #fff; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+</button>
+</nav>
+<div id="mobile-menu" hidden style="position: relative; z-index: 3; margin: 14px 20px 0; background: #fff; border-radius: 18px; padding: 10px; display: flex; flex-direction: column; box-shadow: 0 16px 40px rgba(0,0,0,.18)">
+<a href="#inicio" style="padding: 13px 14px; color: #151C20; text-decoration: none; font-size: 15px; border-radius: 10px">Início</a>
+<a href="#sobre" style="padding: 13px 14px; color: #151C20; text-decoration: none; font-size: 15px; border-radius: 10px">Sobre nós</a>
+<a href="#modalidades" style="padding: 13px 14px; color: #151C20; text-decoration: none; font-size: 15px; border-radius: 10px">Especialidades</a>
+<a href="#equipe" style="padding: 13px 14px; color: #151C20; text-decoration: none; font-size: 15px; border-radius: 10px">Equipe</a>
+<a href="#depoimentos" style="padding: 13px 14px; color: #151C20; text-decoration: none; font-size: 15px; border-radius: 10px">Blog</a>
+<a href="#contato" style="padding: 13px 14px; color: #151C20; text-decoration: none; font-size: 15px; border-radius: 10px">Contato</a>
+<a href="#agendar" style="margin-top: 6px; text-align: center; padding: 13px; border-radius: 999px; background: #104D57; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500">Agendar consulta</a>
+</div>
+<div class="hero-text rise" style="position: relative; z-index: 2; max-width: 560px; padding: 64px 0 56px 44px; display: flex; flex-direction: column; flex-grow: 1">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.14); color: #fff; font-size: 11.5px; font-weight: 500; letter-spacing: .04em; padding: 7px 13px; border-radius: 999px"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.2 4.2 0 0 1 12 7.5a4.2 4.2 0 0 1 7.5 2.6c0 5.8-7.5 10.4-7.5 10.4z"></path></svg>UM ESPAÇO PARA VOCÊ</span>
+<h1 style="margin: 26px 0 0; color: #fff; font-size: clamp(40px, 5vw, 60px); line-height: 1.04; font-weight: 400; letter-spacing: -0.03em">Um caminho mais leve para reencontrar seu equilíbrio.</h1>
+<p style="margin: 26px 0 0; color: rgba(255,255,255,.88); font-size: 16px; line-height: 1.6; max-width: 440px">Psicoterapia com acolhimento e atenção individualizada para compreender suas emoções e construir uma relação mais saudável consigo mesmo.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 34px">
+<a class="btn" href="#agendar" style="display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #151C20; text-decoration: none; font-size: 14px; font-weight: 500; padding: 14px 22px; border-radius: 999px">Agendar sessão<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+<a class="btn" href="#equipe" style="display: inline-flex; align-items: center; background: transparent; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 13px 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.75)">Conhecer profissionais</a>
+</div>
+<div style="margin-top: auto; padding-top: 48px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex">
+<img src="assets/av-mariana.webp" width="38" height="38" alt="" style="width: 38px; height: 38px; border-radius: 999px; object-fit: cover; object-position: 50% 35%; border: 2px solid #fff">
+<img src="assets/av-camila.webp" width="38" height="38" alt="" style="width: 38px; height: 38px; border-radius: 999px; object-fit: cover; object-position: 50% 35%; border: 2px solid #fff; margin-left: -8px">
+<img src="assets/av-beatriz.webp" width="38" height="38" alt="" style="width: 38px; height: 38px; border-radius: 999px; object-fit: cover; object-position: 50% 35%; border: 2px solid #fff; margin-left: -8px">
+<img src="assets/av-juliana.webp" width="38" height="38" alt="" style="width: 38px; height: 38px; border-radius: 999px; object-fit: cover; object-position: 50% 35%; border: 2px solid #fff; margin-left: -8px">
+</div>
+<p style="margin: 0; color: rgba(255,255,255,.88); font-size: 13px">Profissionais preparados para acompanhar sua jornada.</p>
+</div>
+</div>
+</div>
+</header>
+
+<main>
+<!-- INSTITUCIONAL -->
+<section id="sobre" class="wrap" style="padding-top: 96px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: #F0F2F1; color: #104D57; font-size: 11.5px; font-weight: 600; letter-spacing: .04em; padding: 7px 13px; border-radius: 999px"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.2 4.2 0 0 1 12 7.5a4.2 4.2 0 0 1 7.5 2.6c0 5.8-7.5 10.4-7.5 10.4z"></path></svg><span style="color: #151C20">VOCÊ NÃO PRECISA PASSAR POR ISSO SOZINHO</span></span>
+<h2 style="margin: 28px 0 0; font-size: clamp(32px, 3.4vw, 44px); line-height: 1.1; font-weight: 400; letter-spacing: -0.03em; max-width: 520px">Estamos ao seu lado nos momentos em que seguir sozinho parece difícil.</h2>
+<p style="margin: 22px 0 0; font-size: 16px; line-height: 1.65; color: #4F5D60; max-width: 470px">Oferecemos um espaço seguro para falar sobre suas emoções, compreender desafios e desenvolver novas perspectivas para sua vida.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 34px">
+<a class="btn" href="#equipe" style="display: inline-flex; align-items: center; gap: 10px; background: #104D57; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 14px 22px; border-radius: 999px">Sobre a Vellura<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+<a class="btn" href="#agendar" style="display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #151C20; text-decoration: none; font-size: 14px; font-weight: 500; padding: 13px 22px; border-radius: 999px; border: 1px solid #D5DBDA">Agendar conversa<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3.5 10h17"></path><path d="M8.5 14h.01"></path><path d="M12 14h.01"></path><path d="M15.5 14h.01"></path></svg></a>
+</div>
+</div>
+<div style="flex: 1 1 420px; min-width: 0">
+<img src="assets/sessao-1200.webp" srcset="assets/sessao-700.webp 700w, assets/sessao-1200.webp 1200w" sizes="(max-width: 960px) 100vw, 590px" width="1200" height="1000" loading="lazy" decoding="async" alt="Sessão de psicoterapia em consultório aconchegante: paciente de blazer bege sorri enquanto conversa com o psicólogo" style="width: 100%; aspect-ratio: 1.2; object-fit: cover; object-position: 55% 50%; border-radius: 22px; display: block">
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px 0; margin-top: 56px; padding: 8px 0">
+<div style="flex: 1 1 240px; display: flex; align-items: center; gap: 20px">
+<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#104D57" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7.5" r="2.8"></circle><circle cx="16" cy="7.5" r="2.8"></circle><path d="M2.5 19c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"></path><path d="M13.2 14.2c.8-.5 1.8-.7 2.8-.7 3 0 5.5 2.3 5.5 5.5"></path></svg>
+<span style="font-size: 18px; line-height: 1.3; font-weight: 400">Atendimento<br><strong style="font-weight: 600">humanizado</strong></span>
+</div>
+<div class="divider" style="width: 1px; height: 56px; background: #D5DBDA; margin: 0 40px"></div>
+<div style="flex: 1 1 240px; display: flex; align-items: center; gap: 20px">
+<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#104D57" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 4.5-9 4.5-9-4.5z"></path><path d="m3 12 9 4.5 9-4.5"></path><path d="m3 16.5 9 4.5 9-4.5"></path></svg>
+<span style="font-size: 18px; line-height: 1.3">Acompanhamento<br><strong style="font-weight: 600">individual</strong></span>
+</div>
+<div class="divider" style="width: 1px; height: 56px; background: #D5DBDA; margin: 0 40px"></div>
+<div style="flex: 1 1 240px; display: flex; align-items: center; gap: 20px">
+<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#104D57" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.2 2"></path></svg>
+<span style="font-size: 18px; line-height: 1.3">Sessões de<br><strong style="font-weight: 600">50 minutos</strong></span>
+</div>
+</div>
+</section>
+
+<!-- FRASE EDITORIAL -->
+<section class="wrap" style="padding-top: 72px">
+<div style="background: #F0F2F1; border-radius: 28px; padding: 88px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px 40px">
+<svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#8FB0AE" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"></path><path d="M12 14c0-4.6 3.4-8 8.4-8 0 4.6-3.4 8-8.4 8z"></path><path d="M12 16.5c0-3.6-2.7-6.3-6.7-6.3 0 3.6 2.7 6.3 6.7 6.3z"></path></svg>
+<p style="margin: 0; text-align: center; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.3; font-weight: 300; letter-spacing: -0.02em; color: #151C20; max-width: 640px">Criamos um espaço para os seus <strong style="font-weight: 600; color: #104D57">sentimentos</strong>, perguntas e <strong style="font-weight: 600; color: #104D57">histórias</strong>.</p>
+</div>
+</section>
+
+<!-- EQUIPE -->
+<section id="equipe" class="wrap" style="padding-top: 112px; display: flex; flex-direction: column; align-items: center; text-align: center">
+<span style="display: inline-flex; align-items: center; gap: 7px; background: #F0F2F1; color: #104D57; font-size: 11px; font-weight: 600; letter-spacing: .05em; padding: 6px 12px; border-radius: 999px"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.2 4.2 0 0 1 12 7.5a4.2 4.2 0 0 1 7.5 2.6c0 5.8-7.5 10.4-7.5 10.4z"></path></svg><span style="color: #151C20">NOSSA EQUIPE</span></span>
+<h2 style="margin: 20px 0 0; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.12; font-weight: 400; letter-spacing: -0.03em; max-width: 620px">Cuidado de verdade começa com quem sabe ouvir.</h2>
+<p style="margin: 16px 0 0; font-size: 15px; line-height: 1.6; color: #4F5D60; max-width: 470px">Conheça profissionais preparados para acolher sua história e respeitar sua individualidade.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; width: 100%; max-width: 980px; margin-top: 48px">
+<article class="card" style="background: #fff; border-radius: 20px; padding: 10px 10px 22px; box-shadow: 0 6px 24px rgba(21,28,32,.06); display: flex; flex-direction: column; align-items: center">
+<img src="assets/mariana.webp" alt="Retrato da psicóloga Mariana Costa, cabelos cacheados, sorrindo" width="560" height="560" loading="lazy" decoding="async" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 14px; display: block">
+<h3 style="margin: 18px 0 0; font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Dra. Mariana Costa</h3>
+<p style="margin: 5px 0 0; font-size: 13.5px; color: #4F5D60">Psicóloga clínica</p>
+<p style="margin: 8px 0 0; font-size: 12px; color: #5F6D70; letter-spacing: .02em">CRP 00/000000 · demonstrativo</p>
+</article>
+<article class="card" style="background: #fff; border-radius: 20px; padding: 10px 10px 22px; box-shadow: 0 6px 24px rgba(21,28,32,.06); display: flex; flex-direction: column; align-items: center">
+<img src="assets/camila.webp" alt="Retrato da psicóloga Camila Martins, cabelos escuros, sorrindo" width="560" height="560" loading="lazy" decoding="async" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 14px; display: block">
+<h3 style="margin: 18px 0 0; font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Dra. Camila Martins</h3>
+<p style="margin: 5px 0 0; font-size: 13.5px; color: #4F5D60">Psicoterapia</p>
+<p style="margin: 8px 0 0; font-size: 12px; color: #5F6D70; letter-spacing: .02em">CRP 00/000000 · demonstrativo</p>
+</article>
+<article class="card" style="background: #fff; border-radius: 20px; padding: 10px 10px 22px; box-shadow: 0 6px 24px rgba(21,28,32,.06); display: flex; flex-direction: column; align-items: center">
+<img src="assets/beatriz.webp" alt="Retrato da psicóloga Beatriz Almeida, cabelos cacheados, sorrindo" width="560" height="560" loading="lazy" decoding="async" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 14px; display: block">
+<h3 style="margin: 18px 0 0; font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Dra. Beatriz Almeida</h3>
+<p style="margin: 5px 0 0; font-size: 13.5px; color: #4F5D60">Saúde emocional</p>
+<p style="margin: 8px 0 0; font-size: 12px; color: #5F6D70; letter-spacing: .02em">CRP 00/000000 · demonstrativo</p>
+</article>
+</div>
+<p style="margin: 18px 0 0; font-size: 12px; color: #5F6D70">Nomes, fotos e registros CRP são demonstrativos — substituir pelos dados reais da equipe.</p>
+</section>
+
+<!-- ABORDAGEM -->
+<section class="wrap" style="padding-top: 104px">
+<div style="background: linear-gradient(150deg, #104D57 0%, #0F4650 100%); border-radius: 28px; padding: 64px clamp(28px, 5vw, 72px); color: #fff; display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: center">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,.14); font-size: 11px; font-weight: 600; letter-spacing: .05em; padding: 6px 12px; border-radius: 999px"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.2 4.2 0 0 1 12 7.5a4.2 4.2 0 0 1 7.5 2.6c0 5.8-7.5 10.4-7.5 10.4z"></path></svg>NOSSA ABORDAGEM</span>
+<h2 style="margin: 22px 0 0; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.12; font-weight: 400; letter-spacing: -0.03em; max-width: 460px">Priorizamos segurança emocional, diálogo e respeito.</h2>
+</div>
+<div style="flex: 1.4 1 440px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 36px 40px">
+<div style="display: flex; align-items: center; gap: 18px">
+<span style="flex: none; width: 52px; height: 52px; border-radius: 999px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.2 4.2 0 0 1 12 7.5a4.2 4.2 0 0 1 7.5 2.6c0 5.8-7.5 10.4-7.5 10.4z"></path></svg></span>
+<span style="font-size: 16px; line-height: 1.4">Acolhimento<br>sem julgamentos.</span>
+</div>
+<div style="display: flex; align-items: center; gap: 18px">
+<span style="flex: none; width: 52px; height: 52px; border-radius: 999px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.8"></circle><path d="M4.5 20.5c0-3.8 3.4-6.3 7.5-6.3s7.5 2.5 7.5 6.3"></path></svg></span>
+<span style="font-size: 16px; line-height: 1.4">Respeito à sua<br>individualidade.</span>
+</div>
+<div style="display: flex; align-items: center; gap: 18px">
+<span style="flex: none; width: 52px; height: 52px; border-radius: 999px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"></path><path d="M12 14.5v2.5"></path></svg></span>
+<span style="font-size: 16px; line-height: 1.4">Confidencialidade<br>e ética profissional.</span>
+</div>
+<div style="display: flex; align-items: center; gap: 18px">
+<span style="flex: none; width: 52px; height: 52px; border-radius: 999px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8"></path><path d="M12 13c0-4.4 3.2-7.6 8-7.6 0 4.4-3.2 7.6-8 7.6z"></path><path d="M12 15.5c0-3.4-2.5-6-6.3-6 0 3.4 2.5 6 6.3 6z"></path></svg></span>
+<span style="font-size: 16px; line-height: 1.4">Acompanhamento<br>personalizado.</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos" class="wrap" style="padding-top: 112px; display: flex; flex-direction: column; align-items: center; text-align: center">
+<span style="display: inline-flex; align-items: center; gap: 7px; background: #F0F2F1; color: #104D57; font-size: 11px; font-weight: 600; letter-spacing: .05em; padding: 6px 12px; border-radius: 999px"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.2 4.2 0 0 1 12 7.5a4.2 4.2 0 0 1 7.5 2.6c0 5.8-7.5 10.4-7.5 10.4z"></path></svg><span style="color: #151C20">DEPOIMENTOS</span></span>
+<h2 style="margin: 20px 0 0; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.12; font-weight: 400; letter-spacing: -0.03em; max-width: 620px">Histórias de quem encontrou espaço para recomeçar.</h2>
+<p style="margin: 16px 0 0; font-size: 15px; line-height: 1.6; color: #4F5D60; max-width: 480px">Relatos de experiências de acolhimento, autoconhecimento e desenvolvimento pessoal.</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 24px; width: 100%; max-width: 820px; margin-top: 44px">
+<button type="button" aria-label="Depoimento anterior" id="t-prev" style="flex: none; width: 48px; height: 48px; border-radius: 999px; border: 1px solid #E2E7E6; background: #fff; color: #151C20; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(21,28,32,.06)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg></button>
+<figure style="flex: 1 1 auto; min-width: 0; margin: 0; background: #fff; border-radius: 20px; padding: 32px 36px; box-shadow: 0 10px 34px rgba(21,28,32,.07); text-align: left; display: flex; gap: 20px">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="#104D57" aria-hidden="true" style="flex: none"><path d="M4 18v-5.2C4 8.6 6.2 6 10 5.2l.6 1.6C8.4 7.6 7.4 9 7.3 11H10v7zm10 0v-5.2c0-4.2 2.2-6.8 6-7.6l.6 1.6c-2.2.8-3.2 2.2-3.3 4.2H20v7z"></path></svg>
+<div style="display: flex; flex-direction: column; min-width: 0">
+<blockquote id="t-quote" aria-live="polite" style="margin: 0; font-size: 19px; line-height: 1.55; color: #151C20; font-weight: 400">“O acompanhamento me ajudou a lidar melhor com a ansiedade e a enxergar a vida com mais clareza.”</blockquote>
+<figcaption style="margin-top: 22px; display: flex; align-items: center; gap: 14px">
+<img id="t-photo" src="assets/av-juliana.webp" width="44" height="44" loading="lazy" alt="" style="width: 44px; height: 44px; border-radius: 999px; object-fit: cover; object-position: 50% 35%; flex: none">
+<span id="t-initials" hidden style="width: 44px; height: 44px; border-radius: 999px; background: #E3ECEB; color: #104D57; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; flex: none"></span>
+<span style="display: flex; flex-direction: column"><strong id="t-name" style="font-size: 15px; font-weight: 600">Juliana R.</strong><span style="font-size: 12.5px; color: #5F6D70; margin-top: 2px">Depoimento ilustrativo — substituir por relato autorizado</span></span>
+</figcaption>
+</div>
+</figure>
+<button type="button" aria-label="Próximo depoimento" id="t-next" style="flex: none; width: 48px; height: 48px; border-radius: 999px; border: 1px solid #E2E7E6; background: #fff; color: #151C20; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(21,28,32,.06)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></button>
+</div>
+<div style="display: flex; gap: 6px; margin-top: 22px">
+<button type="button" class="t-dot" data-i="0" aria-label="Ver depoimento 1" style="width: 28px; height: 28px; border: 0; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0"><span></span></button>
+<button type="button" class="t-dot" data-i="1" aria-label="Ver depoimento 2" style="width: 28px; height: 28px; border: 0; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0"><span></span></button>
+<button type="button" class="t-dot" data-i="2" aria-label="Ver depoimento 3" style="width: 28px; height: 28px; border: 0; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0"><span></span></button>
+</div>
+</section>
+
+<!-- MODALIDADES -->
+<section id="modalidades" class="wrap" style="padding-top: 104px; display: flex; flex-direction: column; align-items: center; text-align: center">
+<span style="display: inline-flex; align-items: center; background: #F0F2F1; color: #151C20; font-size: 11px; font-weight: 600; letter-spacing: .05em; padding: 6px 12px; border-radius: 999px">COMO COMEÇAR</span>
+<h2 style="margin: 20px 0 0; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.12; font-weight: 400; letter-spacing: -0.03em; max-width: 620px">Cuidado acessível, transparente e individualizado.</h2>
+<p style="margin: 16px 0 0; font-size: 15px; line-height: 1.6; color: #4F5D60">Encontre a modalidade de atendimento adequada às suas necessidades.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; width: 100%; max-width: 980px; margin-top: 44px">
+<article class="card" style="background: #fff; border-radius: 20px; padding: 36px 28px; box-shadow: 0 6px 24px rgba(21,28,32,.06); display: flex; flex-direction: column; align-items: center">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#104D57" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3.5 10h17"></path><path d="M8 13.5h.01"></path><path d="M12 13.5h.01"></path><path d="M16 13.5h.01"></path><path d="M8 17h.01"></path><path d="M12 17h.01"></path></svg>
+<h3 style="margin: 20px 0 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Sessão individual</h3>
+<p style="margin: 10px 0 0; font-size: 14px; line-height: 1.55; color: #4F5D60">Atendimento psicológico focado nas suas demandas.</p>
+</article>
+<article class="card" style="background: #fff; border-radius: 20px; padding: 36px 28px; box-shadow: 0 6px 24px rgba(21,28,32,.06); display: flex; flex-direction: column; align-items: center">
+<svg width="38" height="34" viewBox="0 0 24 24" fill="none" stroke="#104D57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8.5C3.9 8.5 2.5 10.2 2.5 12s1.4 3.5 4 3.5c4 0 7-7 11-7 2.6 0 4 1.7 4 3.5s-1.4 3.5-4 3.5c-4 0-7-7-11-7z"></path></svg>
+<h3 style="margin: 20px 0 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Acompanhamento contínuo</h3>
+<p style="margin: 10px 0 0; font-size: 14px; line-height: 1.55; color: #4F5D60">Processo terapêutico com evolução no seu ritmo.</p>
+</article>
+<article class="card" style="background: #fff; border-radius: 20px; padding: 36px 28px; box-shadow: 0 6px 24px rgba(21,28,32,.06); display: flex; flex-direction: column; align-items: center">
+<svg width="36" height="34" viewBox="0 0 24 24" fill="none" stroke="#104D57" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="5" width="15" height="10.5" rx="1.2"></rect><path d="M2.5 19h19"></path></svg>
+<h3 style="margin: 20px 0 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Psicoterapia online</h3>
+<p style="margin: 10px 0 0; font-size: 14px; line-height: 1.55; color: #4F5D60">Acolhimento e qualidade, onde você estiver.</p>
+</article>
+</div>
+<a class="btn" href="#agendar" style="margin-top: 40px; display: inline-flex; align-items: center; gap: 12px; background: #104D57; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 14px 26px; border-radius: 999px">Consultar valores<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+</section>
+
+<!-- CTA FINAL -->
+<section id="agendar" class="wrap" style="padding-top: 104px; scroll-margin-top: 24px">
+<div style="background: linear-gradient(150deg, #104D57 0%, #276B75 100%); border-radius: 28px; padding: clamp(28px, 5vw, 64px); color: #fff; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 48px 64px">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; padding-top: 8px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,.14); font-size: 11px; font-weight: 600; letter-spacing: .05em; padding: 6px 12px; border-radius: 999px">AGENDAMENTO</span>
+<h2 style="margin: 22px 0 0; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.12; font-weight: 400; letter-spacing: -0.03em; max-width: 480px">Você merece um espaço para cuidar de si.</h2>
+<p style="margin: 18px 0 0; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.88); max-width: 440px">Permita-se começar uma nova etapa com acolhimento e acompanhamento profissional.</p>
+<ul style="list-style: none; margin: 36px 0 0; padding: 0; display: flex; flex-direction: column; gap: 18px; font-size: 15px">
+<li style="display: flex; align-items: center; gap: 14px"><span style="flex: none; width: 40px; height: 40px; border-radius: 999px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.5-4.4a8.4 8.4 0 1 1 15.5-4.5z"></path><path d="M9 9.2c.3 2.4 2.4 4.6 4.8 5l1-1.1 1.8.8-.3 1.5c-3.6.4-7.6-3.5-7.3-7.2l1.5-.3.8 1.8z"></path></svg></span>WhatsApp: [(00) 00000-0000]</li>
+<li style="display: flex; align-items: center; gap: 14px"><span style="flex: none; width: 40px; height: 40px; border-radius: 999px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></span>[ENDEREÇO DA CLÍNICA]</li>
+<li style="display: flex; align-items: center; gap: 14px"><span style="flex: none; width: 40px; height: 40px; border-radius: 999px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.2 2"></path></svg></span>[DIAS E HORÁRIOS DE ATENDIMENTO]</li>
+</ul>
+<p style="margin: 36px 0 0; font-size: 13px; line-height: 1.55; color: rgba(255,255,255,.82); max-width: 420px; padding: 14px 16px; border: 1px solid rgba(255,255,255,.22); border-radius: 14px">Este canal não atende emergências. Em situação de crise, ligue <strong style="color: #fff">188 (CVV)</strong>, gratuito e 24h, ou <strong style="color: #fff">192 (SAMU)</strong>.</p>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; background: #fff; color: #151C20; border-radius: 22px; padding: clamp(24px, 3vw, 36px); box-shadow: 0 24px 60px rgba(0,0,0,.18)">
+<form id="agenda-form" novalidate aria-label="Solicitar agendamento" style="display: flex; flex-direction: column; gap: 18px">
+<div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 500; letter-spacing: -0.02em">Solicite seu agendamento</h3>
+<p style="margin: 6px 0 0; font-size: 14px; color: #4F5D60">Preencha os dados e nossa equipe entra em contato.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 7px">
+<label for="f-nome" style="font-size: 13px; font-weight: 500">Nome completo *</label>
+<input id="f-nome" class="field" type="text" name="nome" autocomplete="name" placeholder="Como podemos te chamar?" aria-describedby="e-nome">
+<span id="e-nome" class="err" role="alert" hidden style="font-size: 12.5px; color: #B3261E">Informe seu nome.</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px 14px">
+<div style="display: flex; flex-direction: column; gap: 7px">
+<label for="f-tel" style="font-size: 13px; font-weight: 500">WhatsApp *</label>
+<input id="f-tel" class="field" type="tel" name="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(00) 00000-0000" aria-describedby="e-tel">
+<span id="e-tel" class="err" role="alert" hidden style="font-size: 12.5px; color: #B3261E">Informe um número com DDD.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 7px">
+<label for="f-email" style="font-size: 13px; font-weight: 500">E-mail</label>
+<input id="f-email" class="field" type="email" name="email" autocomplete="email" placeholder="seu@email.com">
+</div>
+</div>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px">
+<legend style="font-size: 13px; font-weight: 500; padding: 0; margin-bottom: 9px">Modalidade</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" class="pill" aria-pressed="true">Presencial</button>
+<button type="button" class="pill" aria-pressed="false">Online</button>
+<button type="button" class="pill" aria-pressed="false">Ainda não sei</button>
+</div>
+</fieldset>
+<div style="display: flex; flex-direction: column; gap: 7px">
+<label for="f-periodo" style="font-size: 13px; font-weight: 500">Melhor período para contato</label>
+<select id="f-periodo" name="periodo" class="field">
+<option value="Manhã">Manhã</option>
+<option value="Tarde">Tarde</option>
+<option value="Noite">Noite</option>
+<option value="Qualquer horário">Qualquer horário</option>
+</select>
+</div>
+<div style="display: flex; flex-direction: column; gap: 7px">
+<label for="f-msg" style="font-size: 13px; font-weight: 500">Quer contar algo antes? <span style="font-weight: 400; color: #5F6D70">(opcional)</span></label>
+<textarea id="f-msg" class="field" rows="3" placeholder="Escreva só o que se sentir à vontade para compartilhar." name="msg"></textarea>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-lgpd" style="display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.5; color: #4F5D60; cursor: pointer">
+<input id="f-lgpd" type="checkbox" name="lgpd" aria-describedby="e-lgpd" style="flex: none; width: 18px; height: 18px; margin: 1px 0 0; accent-color: #104D57">
+<span>Autorizo a Vellura a usar meus dados apenas para retornar este contato, conforme a LGPD.</span>
+</label>
+<span id="e-lgpd" class="err" role="alert" hidden style="font-size: 12.5px; color: #B3261E">É preciso autorizar o contato para enviar.</span>
+</div>
+<button type="submit" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; border: 0; border-radius: 999px; background: #104D57; color: #fff; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Agendar minha consulta<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></button>
+<p style="margin: -4px 0 0; font-size: 12px; color: #5F6D70; text-align: center">Seus dados são tratados com sigilo.</p>
+</form>
+<div id="agenda-ok" role="status" hidden style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px 8px">
+<span style="width: 64px; height: 64px; border-radius: 999px; background: #E3ECEB; display: inline-flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#104D57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
+<h3 style="margin: 22px 0 0; font-size: 22px; font-weight: 500; letter-spacing: -0.02em">Recebemos sua solicitação, <span id="ok-name"></span>.</h3>
+<p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4F5D60; max-width: 360px">Nossa equipe vai falar com você pelo WhatsApp informado. Se preferir, adiante a conversa agora:</p>
+<a class="btn" id="ok-wa" href="https://wa.me/5500000000000" target="_blank" rel="noopener" style="margin-top: 24px; display: inline-flex; align-items: center; gap: 10px; background: #104D57; color: #fff; text-decoration: none; font-size: 15px; font-weight: 500; padding: 15px 24px; border-radius: 999px">Continuar pelo WhatsApp</a>
+<button type="button" id="ok-reset" style="margin-top: 12px; min-height: 44px; border: 0; background: transparent; color: #104D57; font: inherit; font-size: 14px; text-decoration: underline; cursor: pointer">Enviar outra solicitação</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- RODAPÉ -->
+<footer id="contato" class="wrap" style="padding-top: 56px; padding-bottom: 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-top: 32px; border-top: 1px solid #E2E7E6">
+<a href="#inicio" aria-label="Vellura — voltar ao início" style="display: flex; align-items: center; gap: 10px; color: #104D57; text-decoration: none">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8"></path><path d="M12 13c0-4.4 3.2-7.6 8-7.6 0 4.4-3.2 7.6-8 7.6z"></path><path d="M12 13c0-4.4-3.2-7.6-8-7.6 0 4.4 3.2 7.6 8 7.6z"></path><path d="M12 9.5c0-2.4.9-4.6 2.4-6"></path></svg>
+<span style="display: flex; flex-direction: column; line-height: 1"><span style="font-size: 19px; color: #151C20">Vellura</span><span style="font-size: 10px; color: #5F6D70; margin-top: 4px">Psicologia e Bem-estar</span></span>
+</a>
+<nav aria-label="Rodapé" style="display: flex; flex-wrap: wrap; gap: 8px 26px; font-size: 13.5px">
+<a class="flink" href="#inicio">Início</a>
+<a class="flink" href="#sobre">Sobre nós</a>
+<a class="flink" href="#modalidades">Especialidades</a>
+<a class="flink" href="#equipe">Equipe</a>
+<a class="flink" href="#depoimentos">Blog</a>
+<a class="flink" href="#contato">Contato</a>
+</nav>
+<div style="display: flex; gap: 6px">
+<a href="https://instagram.com/" aria-label="Instagram" style="width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; color: #151C20"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg></a>
+<a href="https://linkedin.com/" aria-label="LinkedIn" style="width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; color: #151C20"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 9h3.2v11H4.5zM6.1 3.5a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM10 9h3.1v1.5h.1c.4-.8 1.5-1.8 3.2-1.8 3.4 0 4 2.2 4 5.1V20h-3.2v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20H10z"></path></svg></a>
+<a href="https://youtube.com/" aria-label="YouTube" style="width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; color: #151C20"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"></path></svg></a>
+</div>
+</div>
+<p style="margin: 24px 0 0; font-size: 12px; color: #5F6D70">© 2026 Vellura — Psicologia e Bem-estar. Responsável técnica: [NOME] · CRP [00/000000]</p>
+</footer>
+
+<!-- BOTÃO FLUTUANTE -->
+<a class="fab" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Vellura." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp" style="display: inline-flex; width: 64px; height: 64px; border-radius: 999px; text-decoration: none">
+<span class="fab-core" style="position: relative; width: 64px; height: 64px; flex: none; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: #25D366; color: #fff; box-shadow: 0 10px 28px rgba(37,211,102,.45)">
+<span class="fab-ping" aria-hidden="true" style="position: absolute; inset: 0; border-radius: 999px; background: #25D366"></span>
+<span class="fab-ping fab-ping2" aria-hidden="true" style="position: absolute; inset: 0; border-radius: 999px; background: #25D366"></span>
+<svg style="position: relative" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.5-4.4a8.4 8.4 0 1 1 15.5-4.5z"></path><path d="M9 9.2c.3 2.4 2.4 4.6 4.8 5l1-1.1 1.8.8-.3 1.5c-3.6.4-7.6-3.5-7.3-7.2l1.5-.3.8 1.8z"></path></svg>
+</span>
+</a>
+</div>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
