@@ -77,9 +77,41 @@ footer#contato{padding-bottom:100px!important}}
 .divider{display:none!important}
 }
 @media (prefers-reduced-motion:reduce){.rise,.btn,.card{animation:none;transition:none}}
+#intro{display:none}
+.intro-on #intro,#intro.out{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:#17414D;color:#fff;font-family:Inter,system-ui,sans-serif;transition:opacity .7s ease,visibility .7s}
+.intro-on body{overflow:hidden}
+#intro.out{opacity:0;visibility:hidden}
+.intro-mark{display:flex;flex-direction:column;align-items:center;gap:18px}
+.intro-mark svg path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s cubic-bezier(.6,.1,.3,1) forwards}
+.intro-mark svg path:nth-child(2){animation-delay:.15s}
+.intro-mark svg path:nth-child(3){animation-delay:.3s}
+.intro-mark svg path:nth-child(4){animation-delay:.45s}
+.intro-name,.intro-sub{opacity:0;animation:rise .9s .7s cubic-bezier(.2,.7,.2,1) forwards}
+.intro-name{font-size:34px;font-weight:300;letter-spacing:.02em;line-height:1}
+.intro-sub{font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:0;color:rgba(255,255,255,.75);animation-delay:.9s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.intro-on .rise > *,.intro-on .hero-photo,.intro-on .fab{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.intro-mark svg path{stroke-dashoffset:0;animation:none}.intro-name,.intro-sub{opacity:1;animation:none}}
 </style>
+<script>try{if(!sessionStorage.getItem('vellura-intro')){document.documentElement.classList.add('intro-on')}}catch(e){}</script>
 </head>
 <body>
+<div id="intro" aria-hidden="true">
+<div class="intro-mark">
+<svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M12 21v-8"></path><path pathLength="1" d="M12 13c0-4.4 3.2-7.6 8-7.6 0 4.4-3.2 7.6-8 7.6z"></path><path pathLength="1" d="M12 13c0-4.4-3.2-7.6-8-7.6 0 4.4 3.2 7.6 8 7.6z"></path><path pathLength="1" d="M12 9.5c0-2.4.9-4.6 2.4-6"></path></svg>
+<span class="intro-name">Vellura</span>
+<span class="intro-sub">Psicologia e Bem-estar</span>
+</div>
+</div>
+<script>
+(function(){var h=document.documentElement;if(!h.classList.contains('intro-on'))return;
+var t0=Date.now(),done=false,el=document.getElementById('intro');
+function end(){if(done)return;done=true;try{sessionStorage.setItem('vellura-intro','1')}catch(e){}
+el.classList.add('out');h.classList.remove('intro-on');setTimeout(function(){el.remove()},800)}
+function onLoad(){setTimeout(end,Math.max(0,2200-(Date.now()-t0)))}
+if(document.readyState==='complete')onLoad();else addEventListener('load',onLoad);
+setTimeout(end,4000);el.addEventListener('click',end)})();
+</script>
 <div style="font-family: Inter, system-ui, sans-serif; color: #151C20; background: #FAFAF8; width: 100%; -webkit-font-smoothing: antialiased">
 
 <!-- HERO -->
